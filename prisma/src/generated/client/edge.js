@@ -124,7 +124,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/yurip/git/seuinvestimento_backend/prisma/src/generated/client",
+      "value": "/usr/src/app/prisma/src/generated/client",
       "fromEnvVar": null
     },
     "config": {
