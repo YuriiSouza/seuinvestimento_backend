@@ -14,10 +14,10 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model Tweets
+ * Model user
  * 
  */
-export type Tweets = $Result.DefaultSelection<Prisma.$TweetsPayload>
+export type user = $Result.DefaultSelection<Prisma.$userPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -26,8 +26,8 @@ export type Tweets = $Result.DefaultSelection<Prisma.$TweetsPayload>
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more Tweets
- * const tweets = await prisma.tweets.findMany()
+ * // Fetch zero or more Users
+ * const users = await prisma.user.findMany()
  * ```
  *
  * 
@@ -47,8 +47,8 @@ export class PrismaClient<
    * @example
    * ```
    * const prisma = new PrismaClient()
-   * // Fetch zero or more Tweets
-   * const tweets = await prisma.tweets.findMany()
+   * // Fetch zero or more Users
+   * const users = await prisma.user.findMany()
    * ```
    *
    * 
@@ -142,14 +142,14 @@ export class PrismaClient<
   $extends: $Extensions.ExtendsHook<'extends', Prisma.TypeMapCb, ExtArgs>
 
       /**
-   * `prisma.tweets`: Exposes CRUD operations for the **Tweets** model.
+   * `prisma.user`: Exposes CRUD operations for the **user** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Tweets
-    * const tweets = await prisma.tweets.findMany()
+    * // Fetch zero or more Users
+    * const users = await prisma.user.findMany()
     * ```
     */
-  get tweets(): Prisma.TweetsDelegate<ExtArgs>;
+  get user(): Prisma.userDelegate<ExtArgs>;
 }
 
 export namespace Prisma {
@@ -620,7 +620,7 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    Tweets: 'Tweets'
+    user: 'user'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -637,73 +637,73 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     meta: {
-      modelProps: 'tweets'
+      modelProps: 'user'
       txIsolationLevel: Prisma.TransactionIsolationLevel
     },
     model: {
-      Tweets: {
-        payload: Prisma.$TweetsPayload<ExtArgs>
-        fields: Prisma.TweetsFieldRefs
+      user: {
+        payload: Prisma.$userPayload<ExtArgs>
+        fields: Prisma.userFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.TweetsFindUniqueArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$TweetsPayload> | null
+            args: Prisma.userFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$userPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.TweetsFindUniqueOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$TweetsPayload>
+            args: Prisma.userFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$userPayload>
           }
           findFirst: {
-            args: Prisma.TweetsFindFirstArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$TweetsPayload> | null
+            args: Prisma.userFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$userPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.TweetsFindFirstOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$TweetsPayload>
+            args: Prisma.userFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$userPayload>
           }
           findMany: {
-            args: Prisma.TweetsFindManyArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$TweetsPayload>[]
+            args: Prisma.userFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$userPayload>[]
           }
           create: {
-            args: Prisma.TweetsCreateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$TweetsPayload>
+            args: Prisma.userCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$userPayload>
           }
           createMany: {
-            args: Prisma.TweetsCreateManyArgs<ExtArgs>,
+            args: Prisma.userCreateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           delete: {
-            args: Prisma.TweetsDeleteArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$TweetsPayload>
+            args: Prisma.userDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$userPayload>
           }
           update: {
-            args: Prisma.TweetsUpdateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$TweetsPayload>
+            args: Prisma.userUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$userPayload>
           }
           deleteMany: {
-            args: Prisma.TweetsDeleteManyArgs<ExtArgs>,
+            args: Prisma.userDeleteManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           updateMany: {
-            args: Prisma.TweetsUpdateManyArgs<ExtArgs>,
+            args: Prisma.userUpdateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           upsert: {
-            args: Prisma.TweetsUpsertArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$TweetsPayload>
+            args: Prisma.userUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$userPayload>
           }
           aggregate: {
-            args: Prisma.TweetsAggregateArgs<ExtArgs>,
-            result: $Utils.Optional<AggregateTweets>
+            args: Prisma.UserAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateUser>
           }
           groupBy: {
-            args: Prisma.TweetsGroupByArgs<ExtArgs>,
-            result: $Utils.Optional<TweetsGroupByOutputType>[]
+            args: Prisma.userGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<UserGroupByOutputType>[]
           }
           count: {
-            args: Prisma.TweetsCountArgs<ExtArgs>,
-            result: $Utils.Optional<TweetsCountAggregateOutputType> | number
+            args: Prisma.userCountArgs<ExtArgs>,
+            result: $Utils.Optional<UserCountAggregateOutputType> | number
           }
         }
       }
@@ -857,367 +857,401 @@ export namespace Prisma {
    */
 
   /**
-   * Model Tweets
+   * Model user
    */
 
-  export type AggregateTweets = {
-    _count: TweetsCountAggregateOutputType | null
-    _avg: TweetsAvgAggregateOutputType | null
-    _sum: TweetsSumAggregateOutputType | null
-    _min: TweetsMinAggregateOutputType | null
-    _max: TweetsMaxAggregateOutputType | null
+  export type AggregateUser = {
+    _count: UserCountAggregateOutputType | null
+    _avg: UserAvgAggregateOutputType | null
+    _sum: UserSumAggregateOutputType | null
+    _min: UserMinAggregateOutputType | null
+    _max: UserMaxAggregateOutputType | null
   }
 
-  export type TweetsAvgAggregateOutputType = {
+  export type UserAvgAggregateOutputType = {
     id: number | null
+    cpf: number | null
   }
 
-  export type TweetsSumAggregateOutputType = {
+  export type UserSumAggregateOutputType = {
     id: number | null
+    cpf: number | null
   }
 
-  export type TweetsMinAggregateOutputType = {
+  export type UserMinAggregateOutputType = {
     id: number | null
-    content: string | null
-    published: boolean | null
+    name: string | null
+    cpf: number | null
+    email: string | null
+    password: string | null
+    agreeTerms: boolean | null
     createdAt: Date | null
   }
 
-  export type TweetsMaxAggregateOutputType = {
+  export type UserMaxAggregateOutputType = {
     id: number | null
-    content: string | null
-    published: boolean | null
+    name: string | null
+    cpf: number | null
+    email: string | null
+    password: string | null
+    agreeTerms: boolean | null
     createdAt: Date | null
   }
 
-  export type TweetsCountAggregateOutputType = {
+  export type UserCountAggregateOutputType = {
     id: number
-    content: number
-    published: number
+    name: number
+    cpf: number
+    email: number
+    password: number
+    agreeTerms: number
     createdAt: number
     _all: number
   }
 
 
-  export type TweetsAvgAggregateInputType = {
+  export type UserAvgAggregateInputType = {
     id?: true
+    cpf?: true
   }
 
-  export type TweetsSumAggregateInputType = {
+  export type UserSumAggregateInputType = {
     id?: true
+    cpf?: true
   }
 
-  export type TweetsMinAggregateInputType = {
+  export type UserMinAggregateInputType = {
     id?: true
-    content?: true
-    published?: true
+    name?: true
+    cpf?: true
+    email?: true
+    password?: true
+    agreeTerms?: true
     createdAt?: true
   }
 
-  export type TweetsMaxAggregateInputType = {
+  export type UserMaxAggregateInputType = {
     id?: true
-    content?: true
-    published?: true
+    name?: true
+    cpf?: true
+    email?: true
+    password?: true
+    agreeTerms?: true
     createdAt?: true
   }
 
-  export type TweetsCountAggregateInputType = {
+  export type UserCountAggregateInputType = {
     id?: true
-    content?: true
-    published?: true
+    name?: true
+    cpf?: true
+    email?: true
+    password?: true
+    agreeTerms?: true
     createdAt?: true
     _all?: true
   }
 
-  export type TweetsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Tweets to aggregate.
+     * Filter which user to aggregate.
      */
-    where?: TweetsWhereInput
+    where?: userWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Tweets to fetch.
+     * Determine the order of users to fetch.
      */
-    orderBy?: TweetsOrderByWithRelationInput | TweetsOrderByWithRelationInput[]
+    orderBy?: userOrderByWithRelationInput | userOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: TweetsWhereUniqueInput
+    cursor?: userWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Tweets from the position of the cursor.
+     * Take `±n` users from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Tweets.
+     * Skip the first `n` users.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Tweets
+     * Count returned users
     **/
-    _count?: true | TweetsCountAggregateInputType
+    _count?: true | UserCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: TweetsAvgAggregateInputType
+    _avg?: UserAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: TweetsSumAggregateInputType
+    _sum?: UserSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: TweetsMinAggregateInputType
+    _min?: UserMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: TweetsMaxAggregateInputType
+    _max?: UserMaxAggregateInputType
   }
 
-  export type GetTweetsAggregateType<T extends TweetsAggregateArgs> = {
-        [P in keyof T & keyof AggregateTweets]: P extends '_count' | 'count'
+  export type GetUserAggregateType<T extends UserAggregateArgs> = {
+        [P in keyof T & keyof AggregateUser]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateTweets[P]>
-      : GetScalarType<T[P], AggregateTweets[P]>
+        : GetScalarType<T[P], AggregateUser[P]>
+      : GetScalarType<T[P], AggregateUser[P]>
   }
 
 
 
 
-  export type TweetsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: TweetsWhereInput
-    orderBy?: TweetsOrderByWithAggregationInput | TweetsOrderByWithAggregationInput[]
-    by: TweetsScalarFieldEnum[] | TweetsScalarFieldEnum
-    having?: TweetsScalarWhereWithAggregatesInput
+  export type userGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: userWhereInput
+    orderBy?: userOrderByWithAggregationInput | userOrderByWithAggregationInput[]
+    by: UserScalarFieldEnum[] | UserScalarFieldEnum
+    having?: userScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: TweetsCountAggregateInputType | true
-    _avg?: TweetsAvgAggregateInputType
-    _sum?: TweetsSumAggregateInputType
-    _min?: TweetsMinAggregateInputType
-    _max?: TweetsMaxAggregateInputType
+    _count?: UserCountAggregateInputType | true
+    _avg?: UserAvgAggregateInputType
+    _sum?: UserSumAggregateInputType
+    _min?: UserMinAggregateInputType
+    _max?: UserMaxAggregateInputType
   }
 
-  export type TweetsGroupByOutputType = {
+  export type UserGroupByOutputType = {
     id: number
-    content: string
-    published: boolean | null
+    name: string
+    cpf: number
+    email: string
+    password: string
+    agreeTerms: boolean | null
     createdAt: Date
-    _count: TweetsCountAggregateOutputType | null
-    _avg: TweetsAvgAggregateOutputType | null
-    _sum: TweetsSumAggregateOutputType | null
-    _min: TweetsMinAggregateOutputType | null
-    _max: TweetsMaxAggregateOutputType | null
+    _count: UserCountAggregateOutputType | null
+    _avg: UserAvgAggregateOutputType | null
+    _sum: UserSumAggregateOutputType | null
+    _min: UserMinAggregateOutputType | null
+    _max: UserMaxAggregateOutputType | null
   }
 
-  type GetTweetsGroupByPayload<T extends TweetsGroupByArgs> = Prisma.PrismaPromise<
+  type GetUserGroupByPayload<T extends userGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<TweetsGroupByOutputType, T['by']> &
+      PickEnumerable<UserGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof TweetsGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof UserGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], TweetsGroupByOutputType[P]>
-            : GetScalarType<T[P], TweetsGroupByOutputType[P]>
+              : GetScalarType<T[P], UserGroupByOutputType[P]>
+            : GetScalarType<T[P], UserGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type TweetsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type userSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    content?: boolean
-    published?: boolean
+    name?: boolean
+    cpf?: boolean
+    email?: boolean
+    password?: boolean
+    agreeTerms?: boolean
     createdAt?: boolean
-  }, ExtArgs["result"]["tweets"]>
+  }, ExtArgs["result"]["user"]>
 
-  export type TweetsSelectScalar = {
+  export type userSelectScalar = {
     id?: boolean
-    content?: boolean
-    published?: boolean
+    name?: boolean
+    cpf?: boolean
+    email?: boolean
+    password?: boolean
+    agreeTerms?: boolean
     createdAt?: boolean
   }
 
 
-  export type $TweetsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Tweets"
+  export type $userPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "user"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      content: string
-      published: boolean | null
+      name: string
+      cpf: number
+      email: string
+      password: string
+      agreeTerms: boolean | null
       createdAt: Date
-    }, ExtArgs["result"]["tweets"]>
+    }, ExtArgs["result"]["user"]>
     composites: {}
   }
 
 
-  type TweetsGetPayload<S extends boolean | null | undefined | TweetsDefaultArgs> = $Result.GetResult<Prisma.$TweetsPayload, S>
+  type userGetPayload<S extends boolean | null | undefined | userDefaultArgs> = $Result.GetResult<Prisma.$userPayload, S>
 
-  type TweetsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<TweetsFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: TweetsCountAggregateInputType | true
+  type userCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<userFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: UserCountAggregateInputType | true
     }
 
-  export interface TweetsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Tweets'], meta: { name: 'Tweets' } }
+  export interface userDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['user'], meta: { name: 'user' } }
     /**
-     * Find zero or one Tweets that matches the filter.
-     * @param {TweetsFindUniqueArgs} args - Arguments to find a Tweets
+     * Find zero or one User that matches the filter.
+     * @param {userFindUniqueArgs} args - Arguments to find a User
      * @example
-     * // Get one Tweets
-     * const tweets = await prisma.tweets.findUnique({
+     * // Get one User
+     * const user = await prisma.user.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUnique<T extends TweetsFindUniqueArgs<ExtArgs>>(
-      args: SelectSubset<T, TweetsFindUniqueArgs<ExtArgs>>
-    ): Prisma__TweetsClient<$Result.GetResult<Prisma.$TweetsPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+    findUnique<T extends userFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, userFindUniqueArgs<ExtArgs>>
+    ): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one Tweets that matches the filter or throw an error  with `error.code='P2025'` 
+     * Find one User that matches the filter or throw an error  with `error.code='P2025'` 
      *     if no matches were found.
-     * @param {TweetsFindUniqueOrThrowArgs} args - Arguments to find a Tweets
+     * @param {userFindUniqueOrThrowArgs} args - Arguments to find a User
      * @example
-     * // Get one Tweets
-     * const tweets = await prisma.tweets.findUniqueOrThrow({
+     * // Get one User
+     * const user = await prisma.user.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUniqueOrThrow<T extends TweetsFindUniqueOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, TweetsFindUniqueOrThrowArgs<ExtArgs>>
-    ): Prisma__TweetsClient<$Result.GetResult<Prisma.$TweetsPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+    findUniqueOrThrow<T extends userFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, userFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
 
     /**
-     * Find the first Tweets that matches the filter.
+     * Find the first User that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TweetsFindFirstArgs} args - Arguments to find a Tweets
+     * @param {userFindFirstArgs} args - Arguments to find a User
      * @example
-     * // Get one Tweets
-     * const tweets = await prisma.tweets.findFirst({
+     * // Get one User
+     * const user = await prisma.user.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirst<T extends TweetsFindFirstArgs<ExtArgs>>(
-      args?: SelectSubset<T, TweetsFindFirstArgs<ExtArgs>>
-    ): Prisma__TweetsClient<$Result.GetResult<Prisma.$TweetsPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+    findFirst<T extends userFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, userFindFirstArgs<ExtArgs>>
+    ): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
 
     /**
-     * Find the first Tweets that matches the filter or
+     * Find the first User that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TweetsFindFirstOrThrowArgs} args - Arguments to find a Tweets
+     * @param {userFindFirstOrThrowArgs} args - Arguments to find a User
      * @example
-     * // Get one Tweets
-     * const tweets = await prisma.tweets.findFirstOrThrow({
+     * // Get one User
+     * const user = await prisma.user.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirstOrThrow<T extends TweetsFindFirstOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, TweetsFindFirstOrThrowArgs<ExtArgs>>
-    ): Prisma__TweetsClient<$Result.GetResult<Prisma.$TweetsPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+    findFirstOrThrow<T extends userFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, userFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
 
     /**
-     * Find zero or more Tweets that matches the filter.
+     * Find zero or more Users that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TweetsFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {userFindManyArgs=} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Tweets
-     * const tweets = await prisma.tweets.findMany()
+     * // Get all Users
+     * const users = await prisma.user.findMany()
      * 
-     * // Get first 10 Tweets
-     * const tweets = await prisma.tweets.findMany({ take: 10 })
+     * // Get first 10 Users
+     * const users = await prisma.user.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const tweetsWithIdOnly = await prisma.tweets.findMany({ select: { id: true } })
+     * const userWithIdOnly = await prisma.user.findMany({ select: { id: true } })
      * 
     **/
-    findMany<T extends TweetsFindManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, TweetsFindManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TweetsPayload<ExtArgs>, T, 'findMany'>>
+    findMany<T extends userFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, userFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, 'findMany'>>
 
     /**
-     * Create a Tweets.
-     * @param {TweetsCreateArgs} args - Arguments to create a Tweets.
+     * Create a User.
+     * @param {userCreateArgs} args - Arguments to create a User.
      * @example
-     * // Create one Tweets
-     * const Tweets = await prisma.tweets.create({
+     * // Create one User
+     * const User = await prisma.user.create({
      *   data: {
-     *     // ... data to create a Tweets
+     *     // ... data to create a User
      *   }
      * })
      * 
     **/
-    create<T extends TweetsCreateArgs<ExtArgs>>(
-      args: SelectSubset<T, TweetsCreateArgs<ExtArgs>>
-    ): Prisma__TweetsClient<$Result.GetResult<Prisma.$TweetsPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+    create<T extends userCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, userCreateArgs<ExtArgs>>
+    ): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
 
     /**
-     * Create many Tweets.
-     *     @param {TweetsCreateManyArgs} args - Arguments to create many Tweets.
+     * Create many Users.
+     *     @param {userCreateManyArgs} args - Arguments to create many Users.
      *     @example
-     *     // Create many Tweets
-     *     const tweets = await prisma.tweets.createMany({
+     *     // Create many Users
+     *     const user = await prisma.user.createMany({
      *       data: {
      *         // ... provide data here
      *       }
      *     })
      *     
     **/
-    createMany<T extends TweetsCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, TweetsCreateManyArgs<ExtArgs>>
+    createMany<T extends userCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, userCreateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Delete a Tweets.
-     * @param {TweetsDeleteArgs} args - Arguments to delete one Tweets.
+     * Delete a User.
+     * @param {userDeleteArgs} args - Arguments to delete one User.
      * @example
-     * // Delete one Tweets
-     * const Tweets = await prisma.tweets.delete({
+     * // Delete one User
+     * const User = await prisma.user.delete({
      *   where: {
-     *     // ... filter to delete one Tweets
+     *     // ... filter to delete one User
      *   }
      * })
      * 
     **/
-    delete<T extends TweetsDeleteArgs<ExtArgs>>(
-      args: SelectSubset<T, TweetsDeleteArgs<ExtArgs>>
-    ): Prisma__TweetsClient<$Result.GetResult<Prisma.$TweetsPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+    delete<T extends userDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, userDeleteArgs<ExtArgs>>
+    ): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
 
     /**
-     * Update one Tweets.
-     * @param {TweetsUpdateArgs} args - Arguments to update one Tweets.
+     * Update one User.
+     * @param {userUpdateArgs} args - Arguments to update one User.
      * @example
-     * // Update one Tweets
-     * const tweets = await prisma.tweets.update({
+     * // Update one User
+     * const user = await prisma.user.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1227,34 +1261,34 @@ export namespace Prisma {
      * })
      * 
     **/
-    update<T extends TweetsUpdateArgs<ExtArgs>>(
-      args: SelectSubset<T, TweetsUpdateArgs<ExtArgs>>
-    ): Prisma__TweetsClient<$Result.GetResult<Prisma.$TweetsPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+    update<T extends userUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, userUpdateArgs<ExtArgs>>
+    ): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
 
     /**
-     * Delete zero or more Tweets.
-     * @param {TweetsDeleteManyArgs} args - Arguments to filter Tweets to delete.
+     * Delete zero or more Users.
+     * @param {userDeleteManyArgs} args - Arguments to filter Users to delete.
      * @example
-     * // Delete a few Tweets
-     * const { count } = await prisma.tweets.deleteMany({
+     * // Delete a few Users
+     * const { count } = await prisma.user.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
     **/
-    deleteMany<T extends TweetsDeleteManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, TweetsDeleteManyArgs<ExtArgs>>
+    deleteMany<T extends userDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, userDeleteManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Tweets.
+     * Update zero or more Users.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TweetsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {userUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Tweets
-     * const tweets = await prisma.tweets.updateMany({
+     * // Update many Users
+     * const user = await prisma.user.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1264,59 +1298,59 @@ export namespace Prisma {
      * })
      * 
     **/
-    updateMany<T extends TweetsUpdateManyArgs<ExtArgs>>(
-      args: SelectSubset<T, TweetsUpdateManyArgs<ExtArgs>>
+    updateMany<T extends userUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, userUpdateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create or update one Tweets.
-     * @param {TweetsUpsertArgs} args - Arguments to update or create a Tweets.
+     * Create or update one User.
+     * @param {userUpsertArgs} args - Arguments to update or create a User.
      * @example
-     * // Update or create a Tweets
-     * const tweets = await prisma.tweets.upsert({
+     * // Update or create a User
+     * const user = await prisma.user.upsert({
      *   create: {
-     *     // ... data to create a Tweets
+     *     // ... data to create a User
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Tweets we want to update
+     *     // ... the filter for the User we want to update
      *   }
      * })
     **/
-    upsert<T extends TweetsUpsertArgs<ExtArgs>>(
-      args: SelectSubset<T, TweetsUpsertArgs<ExtArgs>>
-    ): Prisma__TweetsClient<$Result.GetResult<Prisma.$TweetsPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+    upsert<T extends userUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, userUpsertArgs<ExtArgs>>
+    ): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
 
     /**
-     * Count the number of Tweets.
+     * Count the number of Users.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TweetsCountArgs} args - Arguments to filter Tweets to count.
+     * @param {userCountArgs} args - Arguments to filter Users to count.
      * @example
-     * // Count the number of Tweets
-     * const count = await prisma.tweets.count({
+     * // Count the number of Users
+     * const count = await prisma.user.count({
      *   where: {
-     *     // ... the filter for the Tweets we want to count
+     *     // ... the filter for the Users we want to count
      *   }
      * })
     **/
-    count<T extends TweetsCountArgs>(
-      args?: Subset<T, TweetsCountArgs>,
+    count<T extends userCountArgs>(
+      args?: Subset<T, userCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], TweetsCountAggregateOutputType>
+          : GetScalarType<T['select'], UserCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Tweets.
+     * Allows you to perform aggregations operations on a User.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TweetsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {UserAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -1336,13 +1370,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends TweetsAggregateArgs>(args: Subset<T, TweetsAggregateArgs>): Prisma.PrismaPromise<GetTweetsAggregateType<T>>
+    aggregate<T extends UserAggregateArgs>(args: Subset<T, UserAggregateArgs>): Prisma.PrismaPromise<GetUserAggregateType<T>>
 
     /**
-     * Group by Tweets.
+     * Group by User.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TweetsGroupByArgs} args - Group by arguments.
+     * @param {userGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -1357,14 +1391,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends TweetsGroupByArgs,
+      T extends userGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: TweetsGroupByArgs['orderBy'] }
-        : { orderBy?: TweetsGroupByArgs['orderBy'] },
+        ? { orderBy: userGroupByArgs['orderBy'] }
+        : { orderBy?: userGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -1413,20 +1447,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, TweetsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTweetsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, userGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUserGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Tweets model
+   * Fields of the user model
    */
-  readonly fields: TweetsFieldRefs;
+  readonly fields: userFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Tweets.
+   * The delegate class that acts as a "Promise-like" for user.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__TweetsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__userClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: 'PrismaPromise';
 
 
@@ -1455,296 +1489,299 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Tweets model
+   * Fields of the user model
    */ 
-  interface TweetsFieldRefs {
-    readonly id: FieldRef<"Tweets", 'Int'>
-    readonly content: FieldRef<"Tweets", 'String'>
-    readonly published: FieldRef<"Tweets", 'Boolean'>
-    readonly createdAt: FieldRef<"Tweets", 'DateTime'>
+  interface userFieldRefs {
+    readonly id: FieldRef<"user", 'Int'>
+    readonly name: FieldRef<"user", 'String'>
+    readonly cpf: FieldRef<"user", 'Int'>
+    readonly email: FieldRef<"user", 'String'>
+    readonly password: FieldRef<"user", 'String'>
+    readonly agreeTerms: FieldRef<"user", 'Boolean'>
+    readonly createdAt: FieldRef<"user", 'DateTime'>
   }
     
 
   // Custom InputTypes
 
   /**
-   * Tweets findUnique
+   * user findUnique
    */
-  export type TweetsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tweets
+     * Select specific fields to fetch from the user
      */
-    select?: TweetsSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Filter, which Tweets to fetch.
+     * Filter, which user to fetch.
      */
-    where: TweetsWhereUniqueInput
+    where: userWhereUniqueInput
   }
 
 
   /**
-   * Tweets findUniqueOrThrow
+   * user findUniqueOrThrow
    */
-  export type TweetsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tweets
+     * Select specific fields to fetch from the user
      */
-    select?: TweetsSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Filter, which Tweets to fetch.
+     * Filter, which user to fetch.
      */
-    where: TweetsWhereUniqueInput
+    where: userWhereUniqueInput
   }
 
 
   /**
-   * Tweets findFirst
+   * user findFirst
    */
-  export type TweetsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tweets
+     * Select specific fields to fetch from the user
      */
-    select?: TweetsSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Filter, which Tweets to fetch.
+     * Filter, which user to fetch.
      */
-    where?: TweetsWhereInput
+    where?: userWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Tweets to fetch.
+     * Determine the order of users to fetch.
      */
-    orderBy?: TweetsOrderByWithRelationInput | TweetsOrderByWithRelationInput[]
+    orderBy?: userOrderByWithRelationInput | userOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Tweets.
+     * Sets the position for searching for users.
      */
-    cursor?: TweetsWhereUniqueInput
+    cursor?: userWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Tweets from the position of the cursor.
+     * Take `±n` users from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Tweets.
+     * Skip the first `n` users.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Tweets.
+     * Filter by unique combinations of users.
      */
-    distinct?: TweetsScalarFieldEnum | TweetsScalarFieldEnum[]
+    distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
   }
 
 
   /**
-   * Tweets findFirstOrThrow
+   * user findFirstOrThrow
    */
-  export type TweetsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tweets
+     * Select specific fields to fetch from the user
      */
-    select?: TweetsSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Filter, which Tweets to fetch.
+     * Filter, which user to fetch.
      */
-    where?: TweetsWhereInput
+    where?: userWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Tweets to fetch.
+     * Determine the order of users to fetch.
      */
-    orderBy?: TweetsOrderByWithRelationInput | TweetsOrderByWithRelationInput[]
+    orderBy?: userOrderByWithRelationInput | userOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Tweets.
+     * Sets the position for searching for users.
      */
-    cursor?: TweetsWhereUniqueInput
+    cursor?: userWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Tweets from the position of the cursor.
+     * Take `±n` users from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Tweets.
+     * Skip the first `n` users.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Tweets.
+     * Filter by unique combinations of users.
      */
-    distinct?: TweetsScalarFieldEnum | TweetsScalarFieldEnum[]
+    distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
   }
 
 
   /**
-   * Tweets findMany
+   * user findMany
    */
-  export type TweetsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tweets
+     * Select specific fields to fetch from the user
      */
-    select?: TweetsSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Filter, which Tweets to fetch.
+     * Filter, which users to fetch.
      */
-    where?: TweetsWhereInput
+    where?: userWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Tweets to fetch.
+     * Determine the order of users to fetch.
      */
-    orderBy?: TweetsOrderByWithRelationInput | TweetsOrderByWithRelationInput[]
+    orderBy?: userOrderByWithRelationInput | userOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Tweets.
+     * Sets the position for listing users.
      */
-    cursor?: TweetsWhereUniqueInput
+    cursor?: userWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Tweets from the position of the cursor.
+     * Take `±n` users from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Tweets.
+     * Skip the first `n` users.
      */
     skip?: number
-    distinct?: TweetsScalarFieldEnum | TweetsScalarFieldEnum[]
+    distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
   }
 
 
   /**
-   * Tweets create
+   * user create
    */
-  export type TweetsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tweets
+     * Select specific fields to fetch from the user
      */
-    select?: TweetsSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * The data needed to create a Tweets.
+     * The data needed to create a user.
      */
-    data: XOR<TweetsCreateInput, TweetsUncheckedCreateInput>
+    data: XOR<userCreateInput, userUncheckedCreateInput>
   }
 
 
   /**
-   * Tweets createMany
+   * user createMany
    */
-  export type TweetsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Tweets.
+     * The data used to create many users.
      */
-    data: TweetsCreateManyInput | TweetsCreateManyInput[]
+    data: userCreateManyInput | userCreateManyInput[]
     skipDuplicates?: boolean
   }
 
 
   /**
-   * Tweets update
+   * user update
    */
-  export type TweetsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tweets
+     * Select specific fields to fetch from the user
      */
-    select?: TweetsSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * The data needed to update a Tweets.
+     * The data needed to update a user.
      */
-    data: XOR<TweetsUpdateInput, TweetsUncheckedUpdateInput>
+    data: XOR<userUpdateInput, userUncheckedUpdateInput>
     /**
-     * Choose, which Tweets to update.
+     * Choose, which user to update.
      */
-    where: TweetsWhereUniqueInput
+    where: userWhereUniqueInput
   }
 
 
   /**
-   * Tweets updateMany
+   * user updateMany
    */
-  export type TweetsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Tweets.
+     * The data used to update users.
      */
-    data: XOR<TweetsUpdateManyMutationInput, TweetsUncheckedUpdateManyInput>
+    data: XOR<userUpdateManyMutationInput, userUncheckedUpdateManyInput>
     /**
-     * Filter which Tweets to update
+     * Filter which users to update
      */
-    where?: TweetsWhereInput
+    where?: userWhereInput
   }
 
 
   /**
-   * Tweets upsert
+   * user upsert
    */
-  export type TweetsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tweets
+     * Select specific fields to fetch from the user
      */
-    select?: TweetsSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * The filter to search for the Tweets to update in case it exists.
+     * The filter to search for the user to update in case it exists.
      */
-    where: TweetsWhereUniqueInput
+    where: userWhereUniqueInput
     /**
-     * In case the Tweets found by the `where` argument doesn't exist, create a new Tweets with this data.
+     * In case the user found by the `where` argument doesn't exist, create a new user with this data.
      */
-    create: XOR<TweetsCreateInput, TweetsUncheckedCreateInput>
+    create: XOR<userCreateInput, userUncheckedCreateInput>
     /**
-     * In case the Tweets was found with the provided `where` argument, update it with this data.
+     * In case the user was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<TweetsUpdateInput, TweetsUncheckedUpdateInput>
+    update: XOR<userUpdateInput, userUncheckedUpdateInput>
   }
 
 
   /**
-   * Tweets delete
+   * user delete
    */
-  export type TweetsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tweets
+     * Select specific fields to fetch from the user
      */
-    select?: TweetsSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Filter which Tweets to delete.
+     * Filter which user to delete.
      */
-    where: TweetsWhereUniqueInput
+    where: userWhereUniqueInput
   }
 
 
   /**
-   * Tweets deleteMany
+   * user deleteMany
    */
-  export type TweetsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Tweets to delete
+     * Filter which users to delete
      */
-    where?: TweetsWhereInput
+    where?: userWhereInput
   }
 
 
   /**
-   * Tweets without action
+   * user without action
    */
-  export type TweetsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tweets
+     * Select specific fields to fetch from the user
      */
-    select?: TweetsSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
   }
 
 
@@ -1763,14 +1800,17 @@ export namespace Prisma {
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-  export const TweetsScalarFieldEnum: {
+  export const UserScalarFieldEnum: {
     id: 'id',
-    content: 'content',
-    published: 'published',
+    name: 'name',
+    cpf: 'cpf',
+    email: 'email',
+    password: 'password',
+    agreeTerms: 'agreeTerms',
     createdAt: 'createdAt'
   };
 
-  export type TweetsScalarFieldEnum = (typeof TweetsScalarFieldEnum)[keyof typeof TweetsScalarFieldEnum]
+  export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -1868,98 +1908,134 @@ export namespace Prisma {
    */
 
 
-  export type TweetsWhereInput = {
-    AND?: TweetsWhereInput | TweetsWhereInput[]
-    OR?: TweetsWhereInput[]
-    NOT?: TweetsWhereInput | TweetsWhereInput[]
-    id?: IntFilter<"Tweets"> | number
-    content?: StringFilter<"Tweets"> | string
-    published?: BoolNullableFilter<"Tweets"> | boolean | null
-    createdAt?: DateTimeFilter<"Tweets"> | Date | string
+  export type userWhereInput = {
+    AND?: userWhereInput | userWhereInput[]
+    OR?: userWhereInput[]
+    NOT?: userWhereInput | userWhereInput[]
+    id?: IntFilter<"user"> | number
+    name?: StringFilter<"user"> | string
+    cpf?: IntFilter<"user"> | number
+    email?: StringFilter<"user"> | string
+    password?: StringFilter<"user"> | string
+    agreeTerms?: BoolNullableFilter<"user"> | boolean | null
+    createdAt?: DateTimeFilter<"user"> | Date | string
   }
 
-  export type TweetsOrderByWithRelationInput = {
+  export type userOrderByWithRelationInput = {
     id?: SortOrder
-    content?: SortOrder
-    published?: SortOrderInput | SortOrder
+    name?: SortOrder
+    cpf?: SortOrder
+    email?: SortOrder
+    password?: SortOrder
+    agreeTerms?: SortOrderInput | SortOrder
     createdAt?: SortOrder
   }
 
-  export type TweetsWhereUniqueInput = Prisma.AtLeast<{
+  export type userWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: TweetsWhereInput | TweetsWhereInput[]
-    OR?: TweetsWhereInput[]
-    NOT?: TweetsWhereInput | TweetsWhereInput[]
-    content?: StringFilter<"Tweets"> | string
-    published?: BoolNullableFilter<"Tweets"> | boolean | null
-    createdAt?: DateTimeFilter<"Tweets"> | Date | string
+    AND?: userWhereInput | userWhereInput[]
+    OR?: userWhereInput[]
+    NOT?: userWhereInput | userWhereInput[]
+    name?: StringFilter<"user"> | string
+    cpf?: IntFilter<"user"> | number
+    email?: StringFilter<"user"> | string
+    password?: StringFilter<"user"> | string
+    agreeTerms?: BoolNullableFilter<"user"> | boolean | null
+    createdAt?: DateTimeFilter<"user"> | Date | string
   }, "id">
 
-  export type TweetsOrderByWithAggregationInput = {
+  export type userOrderByWithAggregationInput = {
     id?: SortOrder
-    content?: SortOrder
-    published?: SortOrderInput | SortOrder
+    name?: SortOrder
+    cpf?: SortOrder
+    email?: SortOrder
+    password?: SortOrder
+    agreeTerms?: SortOrderInput | SortOrder
     createdAt?: SortOrder
-    _count?: TweetsCountOrderByAggregateInput
-    _avg?: TweetsAvgOrderByAggregateInput
-    _max?: TweetsMaxOrderByAggregateInput
-    _min?: TweetsMinOrderByAggregateInput
-    _sum?: TweetsSumOrderByAggregateInput
+    _count?: userCountOrderByAggregateInput
+    _avg?: userAvgOrderByAggregateInput
+    _max?: userMaxOrderByAggregateInput
+    _min?: userMinOrderByAggregateInput
+    _sum?: userSumOrderByAggregateInput
   }
 
-  export type TweetsScalarWhereWithAggregatesInput = {
-    AND?: TweetsScalarWhereWithAggregatesInput | TweetsScalarWhereWithAggregatesInput[]
-    OR?: TweetsScalarWhereWithAggregatesInput[]
-    NOT?: TweetsScalarWhereWithAggregatesInput | TweetsScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Tweets"> | number
-    content?: StringWithAggregatesFilter<"Tweets"> | string
-    published?: BoolNullableWithAggregatesFilter<"Tweets"> | boolean | null
-    createdAt?: DateTimeWithAggregatesFilter<"Tweets"> | Date | string
+  export type userScalarWhereWithAggregatesInput = {
+    AND?: userScalarWhereWithAggregatesInput | userScalarWhereWithAggregatesInput[]
+    OR?: userScalarWhereWithAggregatesInput[]
+    NOT?: userScalarWhereWithAggregatesInput | userScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"user"> | number
+    name?: StringWithAggregatesFilter<"user"> | string
+    cpf?: IntWithAggregatesFilter<"user"> | number
+    email?: StringWithAggregatesFilter<"user"> | string
+    password?: StringWithAggregatesFilter<"user"> | string
+    agreeTerms?: BoolNullableWithAggregatesFilter<"user"> | boolean | null
+    createdAt?: DateTimeWithAggregatesFilter<"user"> | Date | string
   }
 
-  export type TweetsCreateInput = {
-    content: string
-    published?: boolean | null
+  export type userCreateInput = {
+    name: string
+    cpf: number
+    email: string
+    password: string
+    agreeTerms?: boolean | null
     createdAt?: Date | string
   }
 
-  export type TweetsUncheckedCreateInput = {
+  export type userUncheckedCreateInput = {
     id?: number
-    content: string
-    published?: boolean | null
+    name: string
+    cpf: number
+    email: string
+    password: string
+    agreeTerms?: boolean | null
     createdAt?: Date | string
   }
 
-  export type TweetsUpdateInput = {
-    content?: StringFieldUpdateOperationsInput | string
-    published?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  export type userUpdateInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    cpf?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    agreeTerms?: NullableBoolFieldUpdateOperationsInput | boolean | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type TweetsUncheckedUpdateInput = {
+  export type userUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    content?: StringFieldUpdateOperationsInput | string
-    published?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    name?: StringFieldUpdateOperationsInput | string
+    cpf?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    agreeTerms?: NullableBoolFieldUpdateOperationsInput | boolean | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type TweetsCreateManyInput = {
+  export type userCreateManyInput = {
     id?: number
-    content: string
-    published?: boolean | null
+    name: string
+    cpf: number
+    email: string
+    password: string
+    agreeTerms?: boolean | null
     createdAt?: Date | string
   }
 
-  export type TweetsUpdateManyMutationInput = {
-    content?: StringFieldUpdateOperationsInput | string
-    published?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  export type userUpdateManyMutationInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    cpf?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    agreeTerms?: NullableBoolFieldUpdateOperationsInput | boolean | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type TweetsUncheckedUpdateManyInput = {
+  export type userUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    content?: StringFieldUpdateOperationsInput | string
-    published?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    name?: StringFieldUpdateOperationsInput | string
+    cpf?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    agreeTerms?: NullableBoolFieldUpdateOperationsInput | boolean | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -2010,33 +2086,44 @@ export namespace Prisma {
     nulls?: NullsOrder
   }
 
-  export type TweetsCountOrderByAggregateInput = {
+  export type userCountOrderByAggregateInput = {
     id?: SortOrder
-    content?: SortOrder
-    published?: SortOrder
+    name?: SortOrder
+    cpf?: SortOrder
+    email?: SortOrder
+    password?: SortOrder
+    agreeTerms?: SortOrder
     createdAt?: SortOrder
   }
 
-  export type TweetsAvgOrderByAggregateInput = {
+  export type userAvgOrderByAggregateInput = {
     id?: SortOrder
+    cpf?: SortOrder
   }
 
-  export type TweetsMaxOrderByAggregateInput = {
+  export type userMaxOrderByAggregateInput = {
     id?: SortOrder
-    content?: SortOrder
-    published?: SortOrder
+    name?: SortOrder
+    cpf?: SortOrder
+    email?: SortOrder
+    password?: SortOrder
+    agreeTerms?: SortOrder
     createdAt?: SortOrder
   }
 
-  export type TweetsMinOrderByAggregateInput = {
+  export type userMinOrderByAggregateInput = {
     id?: SortOrder
-    content?: SortOrder
-    published?: SortOrder
+    name?: SortOrder
+    cpf?: SortOrder
+    email?: SortOrder
+    password?: SortOrder
+    agreeTerms?: SortOrder
     createdAt?: SortOrder
   }
 
-  export type TweetsSumOrderByAggregateInput = {
+  export type userSumOrderByAggregateInput = {
     id?: SortOrder
+    cpf?: SortOrder
   }
 
   export type IntWithAggregatesFilter<$PrismaModel = never> = {
@@ -2099,20 +2186,20 @@ export namespace Prisma {
     set?: string
   }
 
-  export type NullableBoolFieldUpdateOperationsInput = {
-    set?: boolean | null
-  }
-
-  export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string
-  }
-
   export type IntFieldUpdateOperationsInput = {
     set?: number
     increment?: number
     decrement?: number
     multiply?: number
     divide?: number
+  }
+
+  export type NullableBoolFieldUpdateOperationsInput = {
+    set?: boolean | null
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -2239,9 +2326,9 @@ export namespace Prisma {
    * Aliases for legacy arg types
    */
     /**
-     * @deprecated Use TweetsDefaultArgs instead
+     * @deprecated Use userDefaultArgs instead
      */
-    export type TweetsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = TweetsDefaultArgs<ExtArgs>
+    export type userArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = userDefaultArgs<ExtArgs>
 
   /**
    * Batch Payload for updateMany & deleteMany & createMany

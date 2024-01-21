@@ -107,10 +107,13 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.TweetsScalarFieldEnum = {
+exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
-  content: 'content',
-  published: 'published',
+  name: 'name',
+  cpf: 'cpf',
+  email: 'email',
+  password: 'password',
+  agreeTerms: 'agreeTerms',
   createdAt: 'createdAt'
 };
 
@@ -131,7 +134,7 @@ exports.Prisma.NullsOrder = {
 
 
 exports.Prisma.ModelName = {
-  Tweets: 'Tweets'
+  user: 'user'
 };
 
 /**
