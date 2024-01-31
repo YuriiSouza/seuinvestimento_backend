@@ -14,8 +14,8 @@ model user {
   id            Int       @default(autoincrement()) @id
   name          String
   cpf           Int
-  email         String
-  password      String
+  email         String    @unique
+  password      String    
   agreeTerms    Boolean?  @default(false)
   createdAt     DateTime  @default(now())
 }

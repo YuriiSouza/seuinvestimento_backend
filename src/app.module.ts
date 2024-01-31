@@ -4,6 +4,7 @@ import { CacheModule } from '@nestjs/cache-manager';
 // import { AppService } from './app.service';
 import { PrismaService } from './prisma/prisma.service';
 import { SignupModule } from './signup/signup.module';
+import { LoginModule } from './login/login.module';
 import * as redisStore from 'cache-manager-redis-store';
 
 @Module({
@@ -15,6 +16,7 @@ import * as redisStore from 'cache-manager-redis-store';
       port: 6379,
     }),
     SignupModule,
+    LoginModule,
   ],
   providers: [PrismaService],
 })
