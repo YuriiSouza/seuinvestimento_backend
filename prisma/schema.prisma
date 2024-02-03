@@ -11,9 +11,9 @@ datasource db {
 }
 
 model user {
-  id            Int       @default(autoincrement()) @id
+  id            String    @id @default(uuid())
   name          String
-  cpf           Int
+  cpf           String
   email         String    @unique
   password      String    
   agreeTerms    Boolean?  @default(false)

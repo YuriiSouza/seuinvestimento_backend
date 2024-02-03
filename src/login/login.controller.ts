@@ -5,41 +5,58 @@ import {
   Req,
   HttpException,
   HttpStatus,
+  Get,
+  Body,
+  Response
 } from '@nestjs/common';
-import { Response } from 'express';
 import { LoginService } from './login.service';
-import { LoginType } from 'src/interface/loginType';
-import { user } from '@prisma/client';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { DataUser, LoginType } from 'src/interface/loginType';
 
-@Controller('login')
+@Controller('/login')
 export class LoginController {
+  
   constructor(private readonly loginService: LoginService) {}
-  @Post('')
-  async login(@Req() request: LoginType, @Res() response: Response) {
-    const userExists = await this.loginService.checkUserExists(request);
+  
+  @Post()
+  async login(@Body() request: LoginType) {
+    console.log('-----------------------------------------------------')
+    console.log(request)
+    
+    try {
+    const userExists = await this.loginService.checkUserExists(request.email);
+    const passwordCorrect = await this.loginService.checkPassword(request.password, request.email);
 
-    if (!userExists) {
-      console.log('user nao existe');
-      return response.status(404).send({ message: "User doesn't exists" }); // if user doenst exists, the angular will render the signup page
+    if (passwordCorrect && userExists) {
+      console.log('tudo bem');
+      return 'login aceito'
     } else {
-      const passwordCorrect = await this.loginService.checkPassword(request);
-
-      if (!passwordCorrect) {
-        console.log('senha errada');
-        return response.status(401).send({ message: 'Password incorrect' }); //if the password is incorrect the angular need render again the login page
-      } else {
-        console.log('tudo bem');
-        return response.sendStatus(200);
-      }
+      console.log('senha errada');
+      throw new Error('Password incorrect'); //if the password is incorrect the angular need render again the login page
+    }
+    } catch {
+        throw new Error('usuario nao existe')
     }
   }
 
   @Post('/signup')
-  async signup(@Req() request: user) {
+  async signup(@Body() DataUser: DataUser) {
+    console.log(DataUser)
     try {
-      return this.loginService.createUser(request);
+      console.log('signup required');
+      return await this.loginService.createUser(DataUser);
     } catch (error) {
       throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
+  @Get()
+  async getAllUsers() {
+    try {
+      console.log('allusers required');
+      return this.loginService.getUsers();
+    } catch (error) {
+      throw new HttpException('no one user', 300);
     }
   }
 }

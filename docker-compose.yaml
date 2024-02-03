@@ -1,3 +1,4 @@
+
 services:
   api:
     build:
@@ -17,6 +18,8 @@ services:
       - redis
       - postgres
     container_name: 'seuinvest-back'
+    networks:
+      - seu-investimento
 
 
   redis: # Name of container
@@ -26,7 +29,8 @@ services:
     volumes: 
       - redis:/data
     container_name: 'redis'
-
+    networks:
+      - seu-investimento
 
   postgres:
     image: postgres:16.1
@@ -41,8 +45,15 @@ services:
     volumes:
       - docker-nest-postgres:/var/lib/postgresql/data
        - ./scripts/:/docker-entrypoint-initdb.d/
+    networks:
+      - seu-investimento
 
+ 
 volumes:
   docker-nest-postgres:
   redis:
     driver: local
+
+networks:
+  seu-investimento:
+    driver: bridge

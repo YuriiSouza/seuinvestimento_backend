@@ -1,16 +1,14 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable, Res } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { LoginType } from 'src/interface/loginType';
-import { user } from '@prisma/client';
+import { DataUser, LoginType } from 'src/interface/loginType';
+import { uuid } from 'uuidv4';
 
 @Injectable()
 export class LoginService {
   constructor(private prisma: PrismaService) {}
 
-  async checkUserExists(dataLogin: LoginType) {
-    const email = dataLogin.email;
-
-    const user = this.prisma.user.findUnique({
+  async checkUserExists(email: string) {
+    const user = await this.prisma.user.findUnique({
       where: {
         email: email,
       },
@@ -19,43 +17,49 @@ export class LoginService {
     return !!user;
   }
 
-  async checkPassword(dataLogin: LoginType) {
-    const password: string | any = dataLogin.password;
-    const email = dataLogin.email;
-
-    if (!password) {
-      const userPassword = this.prisma.user.findUnique({
-        where: {
-          email: email,
-        },
-        select: {
-          password: true,
-        },
-      });
-
-      return !!(userPassword == password);
-    } else {
-      return false;
-    }
-  }
-
-  async createUser(dataUser: user) {
-    const name = dataUser.name;
-    const email = dataUser.email;
-    const cpf = dataUser.cpf;
-    const Password = dataUser.password;
-    const agreeTerms = dataUser.agreeTerms;
-
-    const userCreation = this.prisma.user.create({
-      data: {
-        name: name,
+  async checkPassword(password: string, email: string) {
+    const userPassword = await this.prisma.user.findUnique({
+      where: {
         email: email,
-        cpf: cpf,
-        password: Password,
-        agreeTerms: agreeTerms,
+      },
+      select: {
+        password: true,
       },
     });
 
+    return !!(userPassword && userPassword.password === password);
+  }
+
+  async createUser(dataUser: DataUser) {
+    const id = uuid();
+    const name = dataUser.name;
+    const email = dataUser.email;
+    const cpf = dataUser.cpf;
+    const password = dataUser.password;
+    const repeatPassword = dataUser.repeatPassword;
+    const agreeTerms = dataUser.agreeTerms;
+
+    // Verificar se a senha e a senha repetida são iguais
+    if (password !== repeatPassword) {
+      throw new HttpException('Passwords do not match', HttpStatus.BAD_REQUEST);
+    }
+
+    // Se as senhas coincidirem, criar o usuário no banco de dados
+    const userCreation = await this.prisma.user.create({
+      data: {
+        id: id,
+        name: name,
+        email: email,
+        cpf: cpf,
+        password: password,
+        agreeTerms: agreeTerms,
+      },
+    });
+    console.log(dataUser);
     return userCreation;
+  }
+
+  async getUsers() {
+    return await this.prisma.user.findMany();
   }
 }
