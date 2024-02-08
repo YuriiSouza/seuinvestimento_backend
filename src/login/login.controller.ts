@@ -12,6 +12,7 @@ import {
 import { LoginService } from './login.service';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { DataUser, LoginType } from 'src/interface/loginType';
+import { response } from 'express';
 
 @Controller('/login')
 export class LoginController {
@@ -29,7 +30,6 @@ export class LoginController {
 
     if (passwordCorrect && userExists) {
       console.log('tudo bem');
-      return 'login aceito'
     } else {
       console.log('senha errada');
       throw new Error('Password incorrect'); //if the password is incorrect the angular need render again the login page
@@ -51,9 +51,8 @@ export class LoginController {
   }
 
   @Get()
-  async getAllUsers() {
+  async getAllUsers(){
     try {
-      console.log('allusers required');
       return this.loginService.getUsers();
     } catch (error) {
       throw new HttpException('no one user', 300);

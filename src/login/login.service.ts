@@ -14,17 +14,14 @@ export class LoginService {
       },
     });
 
-    return !!user;
+    return user;
   }
 
   async checkPassword(password: string, email: string) {
     const userPassword = await this.prisma.user.findUnique({
       where: {
         email: email,
-      },
-      select: {
-        password: true,
-      },
+      }
     });
 
     return !!(userPassword && userPassword.password === password);
@@ -60,6 +57,12 @@ export class LoginService {
   }
 
   async getUsers() {
-    return await this.prisma.user.findMany();
+    try {
+      const result = await this.prisma.user.findMany();
+      console.log(result); // Faz algo com o resultado da promessa
+      return result
+    } catch (erro) {
+      console.error(erro); // Lidar com erros, se houver
+    }
   }
 }
