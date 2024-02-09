@@ -1,15 +1,18 @@
-FROM node:21.5 As development
+FROM node:20.10 As development
 
 WORKDIR /usr/src/app
 
 COPY package.json ./
+COPY prisma ./prisma/
 
-RUN npm install -g @nestjs/cli
+RUN npm cache clean --force
 RUN npm install
 
 COPY . .
 
-RUN npm run prisma:generate
+COPY . .
+
+RUN npm run build
 # Use the node user from the image (instead of the root user)
 USER node
 

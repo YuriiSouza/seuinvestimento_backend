@@ -1,73 +1,81 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# README - SeuInvestimento Backend
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+  
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+This is the backend of the SeuInvestimento project. It provides the server logic for the application and is configured to run using Docker Compose.
 
-## Description
+  
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Prerequisites
 
-## Installation
+  
 
+Before you begin, you'll need to have the following installed on your machine:
+
+  
+
+- Docker: [Docker Installation](https://docs.docker.com/get-docker/)
+
+- Docker Compose: [Docker Compose Installation](https://docs.docker.com/compose/install/)
+
+  
+
+## Environment Setup
+
+  
+
+1. Clone this repository on your machine:
+git clone https://github.com/YuriiSouza/seuinvestimento_backend.git
+
+2. Navigate to the backend directory:
+
+	```bash
+	cd seuinvestimento_backend
+	```
+
+3. Create a `.env` file based on the provided `.env.example` template and configure the necessary environment variables such as `POSTGRES_DB`, `POSTGRES_USER`, `POSTGRES_PASSWORD`, etc.
+
+	```bash
+	cp .env.example .env
+	```
+4. Edit the `.env` file with the appropriate settings for your environment.
+
+  
+
+## Running the Backend
+
+  
+
+Once the environment is set up, you can start the backend using Docker Compose.
+
+  
+
+1. In the root directory of the project, run the following command:
+
+  
+	```bash
+	docker-compose up --build
+	```
+
+	This command will build the necessary Docker images and start the containers.
+
+2. After successful initialization, you'll see messages indicating that the backend is running. You can access it at `http://localhost:3000`.
+
+  
+
+## Stopping the Backend
+
+  
+
+To stop the backend execution, you can press `Ctrl + C` in the terminal where Docker Compose is running or execute the following command in the root directory of the project:
+	
 ```bash
-$ npm install
+	docker-compose down
 ```
+This will shut down the backend containers.
 
-## Running the app
+## Contributing
 
-```bash
-# development
-$ npm run start
+  
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+If you wish to contribute to this project, feel free to open an Issue or submit a Pull Request.
