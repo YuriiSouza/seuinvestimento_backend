@@ -1,3 +1,4 @@
+import { DataUser, LoginType } from './../../interface/loginType';
 import {
   Controller,
   Post,
@@ -9,10 +10,8 @@ import {
   Body,
   Response
 } from '@nestjs/common';
-import { LoginService } from './login.service';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { DataUser, LoginType } from 'src/interface/loginType';
-import { response } from 'express';
+import { LoginService } from '../../services/login.service';
+// import { response } from 'express';
 
 @Controller('/login')
 export class LoginController {

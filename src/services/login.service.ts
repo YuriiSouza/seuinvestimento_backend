@@ -1,6 +1,6 @@
+import { LoginType, DataUser } from '../interface/loginType';
+import { PrismaService } from 'src/infra/prisma/prisma.service';
 import { HttpException, HttpStatus, Injectable, Res } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
-import { DataUser, LoginType } from 'src/interface/loginType';
 import { uuid } from 'uuidv4';
 
 @Injectable()
